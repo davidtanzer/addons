@@ -400,7 +400,15 @@ class RedirectorPlugin extends Gdn_Plugin {
             $result = [
                 '_arg3' => 'CommentID',
             ];
-        } elseif (val('_arg2', $get) == 'td-p') { // Thread = Discussion
+        } elseif (val('_arg2', $get) == 'td-p') { // Thread => Discussion
+            $result = [
+                '_arg3' => 'DiscussionID',
+            ];
+
+            if (val('_arg4', $get) == 'page') {
+                $result['_arg5'] = 'Page';
+            }
+        } elseif (val('_arg2', $get) == 'ta-p') { // Knowledge base => Discussion
             $result = [
                 '_arg3' => 'DiscussionID',
             ];
